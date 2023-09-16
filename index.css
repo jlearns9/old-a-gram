@@ -23,7 +23,6 @@ html, body {
 
 header {
     padding: 5px 10px;
-    display: flex;
     justify-content: space-between;
     border-bottom: 2px solid #C6C6C6;
 }
@@ -42,8 +41,13 @@ header, .post-container {
     background-color: #fff;
 }
 
+span {
+    font-family: "source-bold";
+}
+
 /*Class Selectors*/
 
+header,
 .author {
     display: flex;
 }
@@ -80,21 +84,14 @@ header, .post-container {
     padding: 10px;
 }
 
-.post-interactions-container {
-    display: flex;
-}
-
 .post-interactions {
     width: 22px;
     height: 22px;
     padding-right: 10px;
 }
 
-.post-interactions:hover {
+.post-interactions:hover,
+.post-interactions:active {
     opacity: .5;
     cursor: pointer;
-}
-
-span {
-    font-family: "source-bold";
 }

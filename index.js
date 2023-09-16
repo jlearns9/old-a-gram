@@ -1,3 +1,4 @@
+// Sample Data
 const posts = [
     {
         name: "Vincent van Gogh",
@@ -28,8 +29,10 @@ const posts = [
     }
 ]
 
+// Will contain user posts
 const userPosts = document.getElementById("user-posts")
 
+// Loads in each posts
 for (let i = 0; i < posts.length; i++) {
     userPosts.innerHTML += `
         <div class="post-container">
@@ -43,13 +46,25 @@ for (let i = 0; i < posts.length; i++) {
             <img class="post" src="${posts[i].post}" alt="">
             <div class="bottom">
                 <div class="post-interactions-container">
-                    <img class="post-interactions" src="images/icon-heart.png" alt="heart-icon">
+                    <img class="like-button post-interactions" data-index="${i}" src="images/icon-heart.png" alt="heart-icon">
                     <img class="post-interactions" src="images/icon-comment.png" alt="comment-icon">
                     <img class="post-interactions" src="images/icon-dm.png" alt="dm-icon">
                 </div>
-                <h1>21,492 likes</h1>
+                <h1 class="like-count">${posts[i].likes} likes</h1>
                 <h2><span>${posts[i].username}</span>: ${posts[i].comment}</h2>
             </div>
         </div>
 `}
 
+// Attaching event listener to the heart icon
+document.querySelectorAll('.like-button').forEach((btn) => {
+    btn.addEventListener('click', function(event) {
+        // Retrieve the post's index from the data-index attribute.
+        const postIndex = event.target.getAttribute('data-index');
+        // Add to the total likes
+        posts[postIndex].likes++;
+        // Update the likes in the DOM
+        const likesCountElement = btn.parentElement.nextElementSibling;
+        likesCountElement.textContent = `${posts[postIndex].likes} likes`;
+    });
+});
