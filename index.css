@@ -1,5 +1,100 @@
-html, body {
-    margin: 0;
-    padding: 0;
+/*Fonts*/
+
+@font-face {
+    font-family: "source-bold";
+    src: url("/fonts/SourceSansPro-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-size: normal;
 }
 
+@font-face {
+    font-family: "source-regular";
+    src: url("/fonts/SourceSansPro-Regular.otf") format("opentype");
+    font-weight: 600;
+}
+
+/*Typeography*/
+
+html, body {
+    margin: 0px auto;
+    width: 375px;
+    background-color: #EDEDED;
+}
+
+header {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #C6C6C6;
+}
+
+h1 {
+    font-size: 13px;
+    font-family: "source-bold";
+}
+
+h2 {
+    font-size: 12px;
+    font-family: "source-regular";
+}
+
+header, .post-container {
+    background-color: #fff;
+}
+
+/*Class Selectors*/
+
+.author {
+    display: flex;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.logo {
+    width: 127px;
+}
+
+.avatar {
+    width: 34px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.logo,
+.avatar {
+    align-self: center;
+}
+
+.post {
+    width: 375px;
+
+}
+
+.post-container {
+    margin-bottom: 30px;
+}
+
+.bottom {
+    padding: 10px;
+}
+
+.post-interactions-container {
+    display: flex;
+}
+
+.post-interactions {
+    width: 22px;
+    height: 22px;
+    padding-right: 10px;
+}
+
+.post-interactions:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+span {
+    font-family: "source-bold";
+}

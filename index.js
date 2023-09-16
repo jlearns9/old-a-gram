@@ -28,3 +28,28 @@ const posts = [
     }
 ]
 
+const userPosts = document.getElementById("user-posts")
+
+for (let i = 0; i < posts.length; i++) {
+    userPosts.innerHTML += `
+        <div class="post-container">
+            <div class="author">
+                <img class="avatar" src="${posts[i].avatar}" alt="vanghogh avatar">
+                <div class="poster-details">
+                    <h1 class="author-name">${posts[i].name}</h1>
+                    <h2 class="author-location">${posts[i].location}</h2>
+                </div>
+            </div>
+            <img class="post" src="${posts[i].post}" alt="">
+            <div class="bottom">
+                <div class="post-interactions-container">
+                    <img class="post-interactions" src="images/icon-heart.png" alt="heart-icon">
+                    <img class="post-interactions" src="images/icon-comment.png" alt="comment-icon">
+                    <img class="post-interactions" src="images/icon-dm.png" alt="dm-icon">
+                </div>
+                <h1>21,492 likes</h1>
+                <h2><span>${posts[i].username}</span>: ${posts[i].comment}</h2>
+            </div>
+        </div>
+`}
+
