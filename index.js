@@ -57,7 +57,7 @@ for (let i = 0; i < posts.length; i++) {
 `}
 
 // Attaching event listener to the heart icon
-document.querySelectorAll('.like-button').forEach((btn) => {
+document.querySelectorAll('.like-button').forEach(function(btn) {
     btn.addEventListener('click', function(event) {
         // Retrieve the post's index from the data-index attribute.
         const postIndex = event.target.getAttribute('data-index');
